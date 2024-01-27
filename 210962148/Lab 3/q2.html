@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        body {
+            background-color: #f2e8cf;
+            text-align: center;
+        }
+
+        #demo{
+            font-family: "Courier New";
+            font-weight: bold;
+            font-size: 30px;
+            color: #003049;
+        }
+    
+        .Greeting{
+            color: #003049;
+            font-family: Georgia, 'Times New Roman', Times, serif  ;
+            
+        }
+        div{
+
+            border-radius: 48px;
+            background: linear-gradient(145deg, #dad1ba, #fff8dd);
+            box-shadow:  27px 27px 54px #858072,
+             -27px -27px 54px #ffffff;
+
+             
+            border-style: solid;
+            padding: 1%;
+            padding-left: 2%;
+            padding-right: 2%;
+
+            border-radius: 18px;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+    <h1 class = "Greeting">Greetings !</h1>
+    <p id = 'demo'></p>
+</div>
+    <script>
+        setInterval(myTimer, 1000);
+
+        function myTimer() {
+            const d = new Date();
+            document.getElementById('demo').innerHTML = d.toLocaleTimeString();
+        }
+
+        function getGreeting() {
+            const currentTime = new Date().getHours();
+            let greeting;
+        
+            if (currentTime >= 5 && currentTime < 12) {
+              greeting = "Good morning!";
+            } else if (currentTime >= 12 && currentTime < 18) {
+              greeting = "Good afternoon!";
+            } else {
+              greeting = "Good evening!";
+            }
+        
+            return greeting;
+          }
+        
+    </script>
+</body>
+</html>
